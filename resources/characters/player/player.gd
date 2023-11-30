@@ -1,9 +1,8 @@
-extends CharacterBody2D
+extends Characters
 
 @onready var sprite = $Sprite2D
 @onready var animation_tree = $AnimationTree
 
-@export var speed = 150.0
 @export var acceleration = 0.2
 @export var jump_speed = -300.0
 
@@ -14,7 +13,7 @@ const state_ground_air = ["air", "ground"]
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_counter = 0
 
-func filp(direction):
+func flip(direction):
 	if direction == 0.0: return
 	
 	if direction > 0.0:
@@ -27,6 +26,9 @@ func animation(direction):
 	animation_tree.set("parameters/move/transition_request", state_move[abs(direction)])
 	animation_tree.set("parameters/jump_fall/transition_request", state_jump[int(velocity.y < 0)])
 	animation_tree.set("parameters/ground_air/transition_request", state_ground_air[int(is_on_floor())])
+
+func hit():
+	print("player demage")
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -43,7 +45,7 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, acceleration)
 	
 	
-	filp(direction)
+	flip(direction)
 	animation(direction)
 	
 	if is_on_floor():

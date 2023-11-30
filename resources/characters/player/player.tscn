@@ -99,9 +99,9 @@ nodes/player_state/node = SubResource("AnimationNodeTransition_finya")
 nodes/player_state/position = Vector2(60, 140)
 nodes/run/node = SubResource("AnimationNodeAnimation_i2raq")
 nodes/run/position = Vector2(-680, -80)
-node_connections = [&"output", 0, &"player_state", &"player_state", 0, &"ground_air", &"ground_air", 0, &"move", &"ground_air", 1, &"jump_fall", &"jump_fall", 0, &"jump", &"jump_fall", 1, &"fall", &"move", 0, &"idle", &"move", 1, &"run"]
+node_connections = [&"output", 0, &"player_state", &"ground_air", 0, &"move", &"ground_air", 1, &"jump_fall", &"jump_fall", 0, &"jump", &"jump_fall", 1, &"fall", &"move", 0, &"idle", &"move", 1, &"run", &"player_state", 0, &"ground_air"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_cqfe4")
@@ -116,7 +116,7 @@ vframes = 17
 shape = SubResource("CapsuleShape2D_4xx1e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+offset = Vector2(0, -81)
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

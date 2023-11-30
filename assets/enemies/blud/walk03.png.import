@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q13dunbho8p0"
-path="res://.godot/imported/tileset_plains.png-e2c2e799414022fffe2dfefd4440b6f6.ctex"
+uid="uid://c8jsfdx7wlx88"
+path="res://.godot/imported/walk03.png-0448bae2699526c2e560ccac17fff3f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/tileset_plains.png"
-dest_files=["res://.godot/imported/tileset_plains.png-e2c2e799414022fffe2dfefd4440b6f6.ctex"]
+source_file="res://assets/enemies/blud/walk03.png"
+dest_files=["res://.godot/imported/walk03.png-0448bae2699526c2e560ccac17fff3f1.ctex"]
 
 [params]
 
